@@ -115,14 +115,29 @@ public class Tests_HW_9_10 {
     }
 
     @Test
-    public void fillArrayWithPowTest(){
+    public void fillArrayWithPowTest() {
         HW_9_10.fillArrayWithPow();
     }
 
     @Test
-    public void turnArrayPosAndNegTest(){
-        int [] array = {-13, 9, -314, -89, 98, 52, -4};
+    public void turnArrayPosAndNegTest() {
+        int[] array = {-13, 9, -314, -89, 98, 52, -4};
         HW_9_10.turnArrayPosAndNeg(array);
     }
 
+    @Test
+    public void randomArrayTest() {
+        HW_9_10.randomArray();
+    }
+
+    @Test
+    public void sqrtArrayTest() {
+        HW_9_10.sqrtArray();
+    }
+
+
 }
+
+
+
+

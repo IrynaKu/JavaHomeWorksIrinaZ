@@ -230,25 +230,25 @@ public class HW_9_10 {
     int l = 3456;
     float m = 54.3f;
 
-    float [] mixArray = {(float) k,l,m};
+    float[] mixArray = {(float) k, l, m};
 
     //21. Создать массив типа Byte[] из следующих значений
 
     Byte o = 32;
-    int  p = 74;
+    int p = 74;
     Short r = 104;
 
-    Byte [] byteArray = {o, Integer.valueOf(p).byteValue(), (byte)r.shortValue()};
+    Byte[] byteArray = {o, Integer.valueOf(p).byteValue(), (byte) r.shortValue()};
 
     //22. С помощью метода класса Math.pow() создать массив степеней числа 3:
     //[1.0, 3.0, 9.0, 27.0, 81.0, 243.0, 729.0, 2187.0, 6561.0, 19683.0]
 
-    public static void fillArrayWithPow(){
-        double [] powArray=new double[10];
-        for(int i = 0; i<powArray.length; i++ ){
+    public static void fillArrayWithPow() {
+        double[] powArray = new double[10];
+        for (int i = 0; i < powArray.length; i++) {
             powArray[i] = Math.pow(3.0, i);
         }
-       System.out.println(Arrays.toString(powArray));
+        System.out.println(Arrays.toString(powArray));
 
     }
 
@@ -256,23 +256,44 @@ public class HW_9_10 {
 //    построить новый массив, в котором все числа - положительные
 //    построить новый массив, в котором все числа - отрицательные
 
-      public static void turnArrayPosAndNeg(int [] array){
-        int [] posArray = new int[array.length];
-        int [] negArray = new int[array.length];
-        for(int i = 0; i<array.length; i++){
-            posArray[i]=Math.abs(array[i]);
-            if(array[i]<0){
-                negArray[i]=array[i];
-            }else{
-                negArray[i]=array[i]*-1;
+    public static void turnArrayPosAndNeg(int[] array) {
+        int[] posArray = new int[array.length];
+        int[] negArray = new int[array.length];
+        for (int i = 0; i < array.length; i++) {
+            posArray[i] = Math.abs(array[i]);
+            if (array[i] < 0) {
+                negArray[i] = array[i];
+            } else {
+                negArray[i] = array[i] * -1;
             }
         }
         System.out.println(Arrays.toString(posArray));
-          System.out.println(Arrays.toString(negArray));
+        System.out.println(Arrays.toString(negArray));
+    }
+    // 24. С помощью методов класса Math построить массив int[] из 10 случайных положительных трехзначных чисел (random numbers).
+    // Числа должны быть не больше 1000.
+    // Методы: Math.toIntExact(), Math.round(), Math.random()
 
-      }
+    public static int[] randomArray() {
+        int[] randomArray = new int[10];
+        for (int i = 0; i < randomArray.length; i++) {
+            randomArray[i] = Math.toIntExact(Math.round(Math.random() * 900 + 100));
+        }
+        System.out.print(Arrays.toString(randomArray));
+        return randomArray;
+    }
+    //25. С помощью методов класса Math построить новый массив double[], в котором содержится квадратный корень каждого
+    // значения массива из задания 18.
 
-
+    public static void sqrtArray() {
+        int[] randomArray = randomArray();
+        double[] sqrtArray = new double[randomArray.length];
+        for (int i = 0; i < randomArray.length; i++) {
+            sqrtArray[i] = Math.sqrt(randomArray[i]);
+        }
+        System.out.println(Arrays.toString(randomArray));
+        System.out.println(Arrays.toString(sqrtArray));
+    }
 
 
 }
